@@ -1,0 +1,15 @@
+{
+  "output_file_name": "/vendors.js",
+  "vendor_files": {
+	  "js": [
+		  "../vendor/ngstorage/ngStorage.js",
+		  "../vendor/angular-ui-router/release/angular-ui-router.js",
+		  "../vendor/angular-bootstrap/ui-bootstrap.js",
+		  "../vendor/angular-bootstrap/ui-bootstrap-tpls.js"
+	  ],
+	  "css": [
+	  ],
+	  "assets": [
+	  ]
+  }
+}

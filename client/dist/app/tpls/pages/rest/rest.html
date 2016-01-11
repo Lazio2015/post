@@ -1,0 +1,61 @@
+<div class="col-md-3">
+    <history></history>
+</div>
+<div class="rest col-md-9">
+    <uib-tabset>
+        <!--<div role="tabpanel">-->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" data-ng-repeat="tab in rest.tabs" data-ng-click="rest.selectTab($index)" data-ng-class="{'active':selectedTab === $index}">
+                    <a data-target="#tab" aria-controls="home" role="tab" data-toggle="tab">{{tab.name}} <span class="glyphicon glyphicon-remove" data-ng-click="rest.deleteTab($index)"></span></a>
+                </li>
+                <li role="presentation" data-ng-click="rest.addTab()">
+                    <a aria-controls="home" role="tab" data-toggle="tab">( + )</a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="tab">
+                    <div class="form-group">
+                        <select class="form-control" data-ng-model="rest.tabs[selectedTab].data.type" data-ng-options="value for value in rest.types">
+                        </select>
+                        <!-- Single button -->
+                        <!--<div class="btn-group" uib-dropdown is-open="status.isopen">-->
+                            <!--<button id="single-button" type="button" class="btn btn-primary" uib-dropdown-toggle ng-disabled="disabled">-->
+                                <!--Type <span class="caret"></span>-->
+                            <!--</button>-->
+                            <!--<ul class="uib-dropdown-menu" role="menu" aria-labelledby="single-button" ng-model="rest.tabs[selectedTab].data.type">-->
+                                <!--<li role="menuitem" ng-repeat="type in rest.types track by $index"><a href="#">{{type}}</a></li>-->
+                            <!--</ul>-->
+                        <!--</div>-->
+                        <span class="input-group-addon form-control">http://</span>
+                        <input class="form-control url" data-ng-model="rest.tabs[selectedTab].data.url">
+                        <button type="button" class="btn btn-default" data-ng-disabled="rest.tabs[selectedTab].data.type != 'POST'" data-ng-click="isCollapsed = !isCollapsed">Params</button>
+                        <button class="btn btn-primary" type="button" data-ng-disabled="!rest.tabs[selectedTab].data.url" data-ng-click="rest.sendData(onChan)">
+                                SEND
+                        </button>
+                    </div>
+                    <div uib-collapse="!isCollapsed">
+                        <div class="params-list" data-ng-repeat="param in rest.allParam">
+                            <div class="line">
+                                <div class="params_col">
+                                    <label>Key</label>
+                                    <input type="text" class="form-control" data-ng-model="param.key">
+                                </div>
+                                <div class="params_col">
+                                    <label>Value</label>
+                                    <input type="text" class="form-control" data-ng-model="param.value">
+                                </div>
+                            </div>
+                            <i class="glyphicon glyphicon-plus-sign" data-ng-click="rest.addNewParam()">
+                            </i>
+                        </div>
+                    </div>
+
+                    <div class="clear"></div>
+
+                    <h1>Response</h1>
+                    <div class="well">{{rest.tabs[selectedTab].content}}</div>
+                </div>
+            </div>
+        <!--</div>-->
+    </uib-tabset>
+</div>

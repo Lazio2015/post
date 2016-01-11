@@ -1,0 +1,11 @@
+<div class="history-block">
+    <div class="form-group has-feedback">
+        <input type="text" class="form-control" placeholder="Search..." ng-model="search"/>
+        <i class="glyphicon glyphicon-search form-control-feedback"></i>
+    </div>
+    <div ng-click="historyDirective.invokeClick(h)" class="history-list" ng-repeat="h in history | filter:search | orderBy: sortField:true">
+            <span class="type type-{{ h.type | lowercase}}">{{ h.type }}</span>
+            <span class="url">{{ h.url }}</span>
+            <span class="pull-right" ng-click="historyDirective.delete(h.id); $event.stopPropagation();"><i class="glyphicon glyphicon-trash"></i></span>
+    </div>
+</div>

@@ -1,0 +1,82 @@
+.rest {
+    .tab-content {
+        .tab-pane {
+            .form-group {
+                margin: 20px 10px;
+            }
+        }
+        select {
+            width:13%;
+            float:left;
+        }
+        span {
+            width:7%;
+            line-height: 1.5;
+            float:left;
+        }
+        .url {
+            float:left;
+            width: 60%;
+        }
+        .params-list {
+
+            padding: 15px;
+        //    border: 1px solid red;
+
+            .params_col {
+                width:40%;
+                float:left;
+            }
+            .glyphicon-plus-sign {
+                color: gray;
+                font-size: 25px;
+                float: left;
+                width:15%;
+                margin-top: 28px;
+                margin-left: 15px;
+            }
+        }
+    }
+}
+
+.clear {
+    clear:both;
+}
+
+
+.input-group-btn .dropdown-toggle:not(:last-of-type) {
+    border-radius: 0 !important;
+}
+.type {
+    width: 60px;
+    float: left;
+}
+
+.type-get {
+    color:green;
+}
+.type-post {
+    color:orange;
+}
+.type-put {
+    color:blue;
+}
+.type-delete {
+    color:red;
+}
+.history-list {
+    padding:3px;
+}
+.history-block {
+//    border: 2px solid red;
+    border-radius: 10px;
+    padding: 10px;
+}
+.title {
+    text-align: center;
+    font-size: 20px;
+}
+.history-list:hover {
+    cursor: pointer;
+    background-color: #a6e1ec;
+}
