@@ -64,7 +64,7 @@ var build = {
         dir: '/js',
         app: {
             main: '/app.js',
-            vendor: '/vendor.js'
+            vendor: '/vendors.js'
         }
     },
     resources: {
