@@ -1,9 +1,8 @@
 
 angular.module('App', [
-    'ngRoute',
+    'ngStorage',
     'ui.router',
-    'ui.bootstrap',
-    'ngStorage'])
+    'ui.bootstrap'])
 
     .constant('SystemConfig', {
         url: 'http://localhost:3000/',
