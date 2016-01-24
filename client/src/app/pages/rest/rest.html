@@ -36,12 +36,12 @@
                         <button class="btn btn-primary"
                                 type="button"
                                 ng-disabled="!rest.tabs[selectedTab].data.url"
-                                ng-click="rest.sendData(onChan)">
+                                ng-click="rest.sendData()">
                                 SEND
                         </button>
                     </div>
                     <div uib-collapse="!isCollapsed">
-                        <div class="params-list" ng-repeat="param in rest.allParam">
+                        <div class="params-list" ng-repeat="param in rest.tabs[selectedTab].param">
                             <div class="line">
                                 <div class="params_col">
                                     <label>Key</label>
