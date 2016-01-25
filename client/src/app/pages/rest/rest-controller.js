@@ -24,21 +24,25 @@ function RestCtrl ($scope, $rootScope, RestService) {
             type: rest.types[0],
             url:''
             },
-        content: ''
+        content: '',
+        params: [
+            {
+                key: '',
+                value: ''
+            }
+        ],
+        isCollapsed: false
     }];
 
-    rest.allParam = [
-        {
-            key: '',
-            value: ''
-        }
-    ];
-
     rest.addNewParam = function () {
-        rest.allParam.push({
+        rest.tabs[$scope.selectedTab].params.push({
             key: '',
             value: ''
         });
+    };
+
+    rest.showParam = function () {
+        rest.tabs[$scope.selectedTab].isCollapsed = true;
     };
 
     rest.counter = 1;
