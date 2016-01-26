@@ -3,10 +3,10 @@
 </div>
 <div class="rest col-md-9">
     <uib-tabset>
-        <!--<div role="tabpanel">-->
+        <div role="tabpanel">
             <ul class="nav nav-tabs" role="tablist">
                 <li role="presentation" ng-repeat="tab in rest.tabs" ng-click="rest.selectTab($index)" ng-class="{'active':selectedTab === $index}">
-                    <a data-target="#tab" aria-controls="home" role="tab" data-toggle="tab">{{tab.name}} <span ng-click="rest.deleteTab($index)" class="glyphicon glyphicon-remove"></span></a>
+                    <a data-target="#tab" aria-controls="home" role="tab" data-toggle="tab">{{tab.data.url ? tab.data.url: tab.name}} <span ng-show="rest.tabs.length > 1" ng-click="rest.deleteTab($index)" class="glyphicon glyphicon-remove"></span></a>
                 </li>
                 <li role="presentation" ng-click="rest.addTab()">
                     <a aria-controls="home" role="tab" data-toggle="tab">( + )</a>
@@ -31,8 +31,8 @@
                         <span class="input-group-addon form-control">http://</span>
                         <input class="form-control url" ng-model="rest.tabs[selectedTab].data.url"/>
                         <button type="button" class="btn btn-default"
-                                ng-click="isCollapsed = !isCollapsed"
-                                data-ng-disabled="rest.tabs[selectedTab].data.type != 'POST'">Params</button>
+                                ng-click="rest.openParams()"
+                                >Params</button>
                         <button class="btn btn-primary"
                                 type="button"
                                 ng-disabled="!rest.tabs[selectedTab].data.url"
@@ -40,20 +40,22 @@
                                 SEND
                         </button>
                     </div>
-                    <div uib-collapse="!isCollapsed">
-                        <div class="params-list" ng-repeat="param in rest.tabs[selectedTab].param">
+                    <div uib-collapse="!rest.tabs[selectedTab].isCollapsed">
+                        <div class="params-list" ng-repeat="param in rest.tabs[selectedTab].params">
                             <div class="line">
                                 <div class="params_col">
-                                    <label>Key</label>
-                                    <input type="text" class="form-control" ng-model="param.key">
+                                    <input type="text" class="form-control" ng-model="param.key" placeholder="URL parameter key">
                                 </div>
                                 <div class="params_col">
-                                    <label>Value</label>
-                                    <input type="text" class="form-control" ng-model="param.value">
+                                    <input type="text" class="form-control" ng-model="param.value" placeholder="Value">
                                 </div>
                             </div>
                             <i class="glyphicon glyphicon-plus-sign"
                                ng-click="rest.addNewParam()">
+                            </i>
+                            <i class="glyphicon glyphicon-remove delete"
+                               ng-click="rest.deleteParam($index)"
+                               ng-if="rest.tabs[selectedTab].params.length > 1">
                             </i>
                         </div>
                     </div>
@@ -64,6 +66,6 @@
                     <div class="well">{{rest.tabs[selectedTab].content}}</div>
                 </div>
             </div>
-        <!--</div>-->
+        </div>
     </uib-tabset>
 </div>

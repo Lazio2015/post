@@ -20,20 +20,23 @@
         }
         .params-list {
 
-            padding: 15px;
+            padding: 3px 20px;
         //    border: 1px solid red;
 
             .params_col {
                 width:40%;
                 float:left;
+                input {
+                    height: 22px;
+                }
             }
-            .glyphicon-plus-sign {
+            .glyphicon {
                 color: gray;
-                font-size: 25px;
-                float: left;
-                width:15%;
-                margin-top: 28px;
                 margin-left: 15px;
+                font-size: 15px;
+            }
+            .delete {
+                margin: 4px;
             }
         }
     }
