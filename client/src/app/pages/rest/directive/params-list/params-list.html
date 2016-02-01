@@ -1,0 +1,17 @@
+<div class="params-list" ng-repeat="param in params">
+    <div class="line">
+        <div class="params_col">
+            <input type="text" class="form-control" ng-model="param.key" placeholder="URL parameter key">
+        </div>
+        <div class="params_col">
+            <input type="text" class="form-control" ng-model="param.value" placeholder="Value">
+        </div>
+    </div>
+    <i class="glyphicon glyphicon-plus-sign"
+       ng-click="addNewParam()">
+    </i>
+    <i class="glyphicon glyphicon-remove delete"
+       ng-click="deleteParam($index)"
+       ng-if="params.length > 1">
+    </i>
+</div>

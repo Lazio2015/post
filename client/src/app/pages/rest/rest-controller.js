@@ -5,7 +5,24 @@
 function RestCtrl ($scope, $rootScope, RestService, $sessionStorage) {
     var rest = this;
     rest.types = ['GET', 'POST', 'PUT', 'DELETE', 'HEAD', 'COPY', 'PATCH'];
-
+    rest.tabs = [{
+        id: 1,
+        name: 'New tab',
+        //    active: true,
+        data: {
+            type: rest.types[0],
+            url:''
+        },
+        content: '',
+        params: [
+            {
+                key: '',
+                value: ''
+            }
+        ],
+        isCollapsed: false
+    }];
+    rest.counter = 1;
   //  rest.types = [
   //      { type: "GET",   number: 1 },
   //      { type: "POST",  number: 2 },
@@ -40,6 +57,7 @@ function RestCtrl ($scope, $rootScope, RestService, $sessionStorage) {
     //add tab
     rest.addTab = function () {
         rest.counter++;
+        $sessionStorage.tabs = rest.tabs;
         $sessionStorage.tabs.push({
             id: rest.counter,
             name: 'New tab ',
@@ -78,8 +96,6 @@ function RestCtrl ($scope, $rootScope, RestService, $sessionStorage) {
         RestService
             .send($sessionStorage.tabs[$scope.selectedTab].data)
             .success(function(response) {
-                console.log(response);
-                console.log($sessionStorage.tabs[$scope.selectedTab].data);
                 $sessionStorage.tabs[$scope.selectedTab].content = response.content;
 
                 $rootScope.$emit('history: addData', response.history);
@@ -104,26 +120,6 @@ function RestCtrl ($scope, $rootScope, RestService, $sessionStorage) {
                 tab.id = changeCount++;
             });
             rest.counter = rest.tabs.length;
-        } else {
-            rest.tabs = [{
-                id: 1,
-                name: 'New tab',
-            //    active: true,
-                data: {
-                    type: rest.types[0],
-                    url:''
-                },
-                content: '',
-                params: [
-                    {
-                        key: '',
-                        value: ''
-                    }
-                ],
-                isCollapsed: false
-            }];
-            $sessionStorage.tabs = rest.tabs;
-            rest.counter = 1;
         }
     };
 

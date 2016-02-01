@@ -22,5 +22,8 @@ angular.module('App', [
     .controller('ParamsListDirectiveCtrl', ParamsListDirectiveCtrl)
     .directive('paramsList', ParamsListDirective)
 
+    .controller('ParamsTabDirectiveCtrl', ParamsTabDirectiveCtrl)
+    .directive('paramsTab', ParamsTabDirective)
+
     .controller('HistoryDirectiveCtrl', HistoryDirectiveCtrl)
     .directive('history', HistoryDirective);
