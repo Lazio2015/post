@@ -20,7 +20,16 @@ function RestCtrl ($scope, $rootScope, RestService, $sessionStorage) {
                 value: ''
             }
         ],
-        isCollapsed: false
+        isCollapsed: false,
+        headers: {
+            authorization: '',
+            bodyParams: [
+                {
+                    key: '',
+                    value: ''
+                }
+            ]
+        }
     }];
     rest.counter = 1;
   //  rest.types = [
@@ -69,7 +78,16 @@ function RestCtrl ($scope, $rootScope, RestService, $sessionStorage) {
                     value: ''
                 }
             ],
-            isCollapsed: false
+            isCollapsed: false,
+            headers: {
+                authorization: '',
+                bodyParams: [
+                    {
+                        key: '',
+                        value: ''
+                    }
+                ]
+            }
         });
         $scope.selectedTab = $sessionStorage.tabs.length - 1;
         rest.tabs = $sessionStorage.tabs;

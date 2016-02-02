@@ -41,23 +41,7 @@
                         </button>
                     </div>
                     <div uib-collapse="!rest.tabs[selectedTab].isCollapsed">
-                        <div class="params-list" ng-repeat="param in rest.tabs[selectedTab].params">
-                            <div class="line">
-                                <div class="params_col">
-                                    <input type="text" class="form-control" ng-model="param.key" placeholder="URL parameter key">
-                                </div>
-                                <div class="params_col">
-                                    <input type="text" class="form-control" ng-model="param.value" placeholder="Value">
-                                </div>
-                            </div>
-                            <i class="glyphicon glyphicon-plus-sign"
-                               ng-click="rest.addNewParam()">
-                            </i>
-                            <i class="glyphicon glyphicon-remove delete"
-                               ng-click="rest.deleteParam($index)"
-                               ng-if="rest.tabs[selectedTab].params.length > 1">
-                            </i>
-                        </div>
+                        <params-list ng-model="rest.tabs[selectedTab].params"></params-list>
                     </div>
 
                     <params-tab item="rest.tabs[selectedTab]"></params-tab>

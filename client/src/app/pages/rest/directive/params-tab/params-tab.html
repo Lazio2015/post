@@ -25,7 +25,7 @@
         Headers
     </uib-tab>
     <uib-tab heading="Body">
-        <params-list ng-model="item.params"></params-list>
+        <params-list ng-model="item.headers.bodyParams"></params-list>
     </uib-tab>
     <uib-tab ng-repeat="tab in tabs" heading="666" active="tab.active" disable="tab.disabled">
         {{tab.content}}
