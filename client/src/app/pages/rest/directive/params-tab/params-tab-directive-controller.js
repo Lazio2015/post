@@ -2,9 +2,12 @@
  * Created by Lenur on 08.01.2016.
  */
 
-function ParamsTabDirectiveCtrl ($scope) {
+function ParamsTabDirectiveCtrl () {
     var paramsTab = this;
 
-    //default one empty param
+    paramsTab.bodyType = 'formData';
 
+    paramsTab.checkBodyType = function(type) {
+        return (paramsTab.bodyType == type) ? true : false;
+    }
 }

@@ -1,11 +1,9 @@
-<div class="params-list" ng-repeat="param in params">
-    <div class="line">
-        <div class="params_col">
-            <input type="text" class="form-control" ng-model="param.key" placeholder="URL parameter key">
-        </div>
-        <div class="params_col">
-            <input type="text" class="form-control" ng-model="param.value" placeholder="Value">
-        </div>
+<div class="line" ng-repeat="param in params">
+    <div class="params_col">
+        <input type="text" class="form-control" ng-model="param.key" placeholder="{{placeholderKey}}">
+    </div>
+    <div class="params_col">
+        <input type="text" class="form-control" ng-model="param.value" placeholder="Value">
     </div>
     <i class="glyphicon glyphicon-plus-sign"
        ng-click="addNewParam()">

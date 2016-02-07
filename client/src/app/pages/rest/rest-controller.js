@@ -21,15 +21,19 @@ function RestCtrl ($scope, $rootScope, RestService, $sessionStorage) {
             }
         ],
         isCollapsed: false,
-        headers: {
-            authorization: '',
-            bodyParams: [
-                {
-                    key: '',
-                    value: ''
-                }
-            ]
-        }
+        authorization: '',
+        headers: [
+            {
+                key: '',
+                value: ''
+            }
+        ],
+        bodyParams: [
+            {
+                key: '',
+                value: ''
+            }
+        ]
     }];
     rest.counter = 1;
   //  rest.types = [
@@ -69,7 +73,7 @@ function RestCtrl ($scope, $rootScope, RestService, $sessionStorage) {
         $sessionStorage.tabs = rest.tabs;
         $sessionStorage.tabs.push({
             id: rest.counter,
-            name: 'New tab ',
+            name: 'New tab ' + rest.counter,
             data : {type: rest.types[0], url: '', content:''},
             content: '',
             params: [
@@ -79,15 +83,19 @@ function RestCtrl ($scope, $rootScope, RestService, $sessionStorage) {
                 }
             ],
             isCollapsed: false,
-            headers: {
-                authorization: '',
-                bodyParams: [
-                    {
-                        key: '',
-                        value: ''
-                    }
-                ]
-            }
+            authorization: '',
+            headers: [
+                {
+                    key: '',
+                    value: ''
+                }
+            ],
+            bodyParams: [
+                {
+                    key: '',
+                    value: ''
+                }
+            ]
         });
         $scope.selectedTab = $sessionStorage.tabs.length - 1;
         rest.tabs = $sessionStorage.tabs;

@@ -1,32 +1,37 @@
-<!--<tabset>-->
-    <!--<tab heading="Static title">Static content</tab>-->
-    <!--<tab ng-repeat="tab in tabs" heading="{{tab.title}}" active="tab.active" disable="tab.disabled">-->
-        <!--{{tab.content}}-->
-    <!--</tab>-->
-    <!--<tab select="alertMe()">-->
-        <!--<tab-heading>-->
-            <!--<i class="glyphicon glyphicon-bell"></i> Alert!-->
-        <!--</tab-heading>-->
-        <!--I've got an HTML heading, and a select callback. Pretty cool!-->
-    <!--</tab>-->
-<!--</tabset>-->
 <uib-tabset>
     <uib-tab heading="Authorization">
         Authorization content
     </uib-tab>
     <uib-tab heading="Headers">
-        Headers
-        Headers
-        Headers
-        Headers
-        Headers
-        Headers
-        Headers
-        Headers
+        <div class="params-list"
+             ng-model="item.headers"
+             placeholder-key="Header">
+        </div>
     </uib-tab>
-    <uib-tab heading="Body">
-        <params-list ng-model="item.headers.bodyParams"></params-list>
+
+    <uib-tab heading="Body" class="body-params" active="true">
+        <div class="line">
+            <div class="item">
+                <input type="radio" ng-model="paramsTab.bodyType" ng-value="'formData'" />  formData
+            </div>
+            <div class="item">
+                <input type="radio" ng-model="paramsTab.bodyType" ng-value="'xWwwForm'" />  x-www-form-urlencoded
+            </div>
+            <div class="item">
+                <input class="" type="radio" ng-model="paramsTab.bodyType" ng-value="'raw'" />  raw
+            </div>
+        </div>
+        <div class="params-list"
+             ng-model="item.bodyParams"
+             placeholder-key="Key"
+             ng-if="paramsTab.checkBodyType('formData')"></div>
+        <div>
+        <textarea ng-model="paramsTab.textArea"
+                  ng-if="paramsTab.checkBodyType('raw')">
+        </textarea>
+        </div>
     </uib-tab>
+
     <uib-tab ng-repeat="tab in tabs" heading="666" active="tab.active" disable="tab.disabled">
         {{tab.content}}
     </uib-tab>

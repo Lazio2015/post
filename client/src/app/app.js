@@ -19,7 +19,7 @@ angular.module('App', [
     .controller('RestCtrl', RestCtrl)
     .factory('RestService', RestService)
 
-    .controller('ParamsListDirectiveCtrl', ParamsListDirectiveCtrl)
+    //params-list
     .directive('paramsList', ParamsListDirective)
 
     .controller('ParamsTabDirectiveCtrl', ParamsTabDirectiveCtrl)

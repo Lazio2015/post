@@ -4,7 +4,7 @@
 
 function ParamsTabDirective() {
     return {
-        restrict: 'AE',
+        restrict: 'C',
         templateUrl: 'tpls/pages/rest/directive/params-tab/params-tab.html',
         controller: 'ParamsTabDirectiveCtrl',
         controllerAs: 'paramsTab',
@@ -12,7 +12,7 @@ function ParamsTabDirective() {
             item: '='
         },
         link: function (scope, element, attr) {
-console.log('tab', scope.item);
+
         }
     }
 }

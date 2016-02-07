@@ -1,0 +1,32 @@
+.params-list {
+ //   margin: 10px 5px;
+    padding: 5px 15px;
+
+    .line {
+        margin-bottom: 5px;
+    }
+
+    .params_col {
+        width: 40%;
+        float: left;
+            input {
+                height: 22px;
+            }
+    }
+    .glyphicon {
+        color: gray;
+        margin-left: 15px;
+        font-size: 15px;
+    }
+    .delete {
+        margin: 4px;
+    }
+}
+
+.clear {
+    clear:both;
+}
+
+.input-group-btn .dropdown-toggle:not(:last-of-type) {
+    border-radius: 0 !important;
+}

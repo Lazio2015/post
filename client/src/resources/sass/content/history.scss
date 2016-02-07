@@ -1,0 +1,35 @@
+.history {
+  .type {
+    width: 60px;
+    float: left;
+  }
+
+  .type-get {
+    color:green;
+  }
+  .type-post {
+    color:orange;
+  }
+  .type-put {
+    color:blue;
+  }
+  .type-delete {
+    color:red;
+  }
+  .history-list {
+    padding:3px;
+  }
+  .history-block {
+    //    border: 2px solid red;
+    border-radius: 10px;
+    padding: 10px;
+  }
+  .title {
+    text-align: center;
+    font-size: 20px;
+  }
+  .history-list:hover {
+    cursor: pointer;
+    background-color: #a6e1ec;
+  }
+}

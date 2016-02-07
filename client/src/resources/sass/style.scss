@@ -1,3 +1,5 @@
 @import "../../../../vendor/bootstrap-sass/assets/stylesheets/bootstrap";
 
-@import "content/style";
+@import "content/common";
+@import "content/rest";
+@import "content/history";

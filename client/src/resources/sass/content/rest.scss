@@ -1,0 +1,40 @@
+.rest {
+  .tab-content {
+    .tab-pane {
+      .form-group {
+        margin: 20px 10px;
+      }
+    }
+    .http-method {
+      width: auto;
+      float: left;
+    }
+    .http.input-group-addon {
+      width: auto;
+      line-height: 1.5;
+      float: left;
+    }
+    .http-url {
+      float:left;
+      width: 60%;
+    }
+
+    .params-tab {
+      .tab-content{
+          .line {
+            padding: 10px;
+            margin:  0px 10px;
+
+            .item:not(:first-child) {
+              padding-left: 20px;
+            }
+            .item {
+              display: inline-block;
+            }
+          }
+      }
+    }
+  }
+
+
+}
